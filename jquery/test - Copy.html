@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+var v=0;
+
+function rotate() {	
+
+	var n = $(".animTxt span").length;
+
+	if(v<=n)
+	{
+	$(".animTxt span").eq(v).css('color','green');
+		for(i=0;i<n;i++)
+		{
+			if(i!=v)
+			{
+			$(".animTxt span").eq(i).css('color','#ccc');
+			}
+		}
+	v++;
+	}
+	else
+	{
+	v=0;
+	$(".animTxt span").eq(v).css('color','green');
+	for(i=0;i<n;i++)
+		{
+			if(i!=v)
+			{
+			$(".animTxt span").eq(i).css('color','#ccc');
+			}
+		}
+	}
+
+};
+
+
+$(document).ready(function() {		
+	//Load the slideshow
+	setInterval('rotate()',3000);	
+});
+
+
+</script>
+</head>
+<body>
+<div class="animTxt">
+<span>Regex</span><span>is</span><span>commonly</span><span>used</span><span>for</span><span>this</span>
+</div>
+</body>
+</html>
